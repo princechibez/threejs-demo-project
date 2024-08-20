@@ -24,10 +24,10 @@ window.addEventListener('resize', onWindowResize);
 
 // SCENE
 const scene: THREE.Scene = new THREE.Scene()
-scene.background = new THREE.Color(0xbfd1e5);
+scene.background = new THREE.Color("#000");
 
 // CONTROLS
-const controls = new OrbitControls(camera, renderer.domElement);
+new OrbitControls(camera, renderer.domElement);
 
 export function animate() {
   dragObject();
@@ -53,10 +53,10 @@ dirLight.shadow.camera.bottom = -70;
 
 function createFloor() {
   let pos = { x: 0, y: -1, z: 3 };
-  let scale = { x: 100, y: 2, z: 100 };
+  let scale = { x: 80, y: 2, z: 80 };
 
   let blockPlane = new THREE.Mesh(new THREE.BoxBufferGeometry(),
-    new THREE.MeshPhongMaterial({ color: 0xf9c834 }));
+    new THREE.MeshPhongMaterial({ color: "green" }));
   blockPlane.position.set(pos.x, pos.y, pos.z);
   blockPlane.scale.set(scale.x, scale.y, scale.z);
   blockPlane.castShadow = true;
